@@ -58,10 +58,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "parqueadero-fornt:build"
+            "browserTarget": "parqueadero-fornt:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
-            "production": {
+            " duction": {
               "browserTarget": "parqueadero-fornt:build:production"
             }
           }

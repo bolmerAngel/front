@@ -1,0 +1,11 @@
+{
+    "/parqueadero": {
+        "target": {
+            "host": "localhost",
+            "protocol": "http:",
+            "port": 8085
+        },
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

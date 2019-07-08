@@ -1,0 +1,51 @@
+<div class="container">
+
+    <form action="">
+
+        <div>
+            <div class="input-field col s12">
+                <input type="text" id="placa" name="placa" [(ngModel)]="formulariovehiculo.placa">
+                <label for="placa">Placa</label>
+            </div>
+            <div>
+                <select class="browser-default" id="tipo" name="tipovehiculo"
+                    [(ngModel)]="formulariovehiculo.tipovehiculo">
+                    <option value="" disabled selected>Selecione el tipo de vehiculo</option>
+                    <option value="CARRO">Carro</option>
+                    <option value="MOTO">Moto</option>
+                </select>
+            </div>
+            <div *ngIf="formulariovehiculo.tipovehiculo === 'MOTO'">
+                <div class="input-field col s12">
+                    <input type="number" id="cilindraje" name="cilindraje" [(ngModel)]="formulariovehiculo.cilindraje">
+                    <label for="cilindraje">cilindraje</label>
+                </div>
+            </div>
+            <br/>
+            <a class="waves-effect waves-light btn-small" (click)="registrar()">Enviar</a>
+        </div>
+    </form>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Tipo vehiculo</th>
+                <th>Cilindrahe</th>
+                <th>cobro</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of listado">
+                <td>{{item.placa}}</td>
+                <td>{{item.tipovehiculo}}</td>
+                <td>{{item.cilindraje}}</td>
+                <td>{{item.valor}}</td>
+                <td><a class="waves-effect waves-light btn-small" (click)="salir(item.placa)">salida</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
