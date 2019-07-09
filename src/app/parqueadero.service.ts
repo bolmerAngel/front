@@ -15,6 +15,7 @@ export class ParqueaderoService {
 
   crear(data: any) {
     return this.http.post(environment.URL, data);
+
   }
 
   listar() {
@@ -22,7 +23,7 @@ export class ParqueaderoService {
   }
 
   salir(placa: string) {
-    return this.http.put(environment.URL + "/" + placa, null)
+    return this.http.put(`${environment.URL}/${placa}`, null)
   }
 
 
