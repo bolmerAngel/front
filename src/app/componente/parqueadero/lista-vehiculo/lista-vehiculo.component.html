@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Placa</th>
+            <th>Tipo vehiculo</th>
+            <th>Cilindrahe</th>
+            <th>cobro</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of listado">
+            <td>{{item.placa}}</td>
+            <td>{{item.tipovehiculo}}</td>
+            <td>{{item.cilindraje}}</td>
+            <td>{{item.valor}}</td>
+            <td><a class="waves-effect waves-light btn-small" (click)="salir(item.placa)">salida</a></td>
+        </tr>
+    </tbody>
+</table>

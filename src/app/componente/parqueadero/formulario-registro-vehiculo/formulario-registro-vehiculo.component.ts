@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ParqueaderoService } from 'src/app/parqueadero.service';
+import { ListaVehiculoComponent } from '../lista-vehiculo/lista-vehiculo.component';
 
 @Component({
   selector: 'app-formulario-registro-vehiculo',
@@ -8,56 +9,39 @@ import { ParqueaderoService } from 'src/app/parqueadero.service';
 })
 export class FormularioRegistroVehiculoComponent implements OnInit {
 
+  @ViewChild(ListaVehiculoComponent, { static: true }) listado: ListaVehiculoComponent;
+
   public formulariovehiculo = {
     placa: "",
     tipovehiculo: "",
     cilindraje: 0
   }
-  public listado;
   public registrar() {
     this.parqueaderoServicio.crear(this.formulariovehiculo).subscribe((salida) => {
-      this.listar();
+      this.listado.listar();
       this.resetearFormulario();
     }
-    , err => {
-    alert(err.error.message);
-    });
+      , err => {
+        alert(err.error.message);
+      });
 
 
   }
 
 
 
-  public listar() {
-    this.parqueaderoServicio.listar().subscribe((salida) => {
-      this.listado= salida;
-
-    }
-    , err => {
-    alert(err.error.message);
-    });
-  }
 
 
-  public resetearFormulario()  {
-    this.formulariovehiculo= {
-    tipovehiculo: '',
-    placa: '',
-    cilindraje: 0
+  public resetearFormulario() {
+    this.formulariovehiculo = {
+      tipovehiculo: '',
+      placa: '',
+      cilindraje: 0
     };
-    }
-
-
-
-  public salir(placa) {
-    this.parqueaderoServicio.salir(placa).subscribe((salida) => {
-      this.listar()
-    }
-    
-, err => {
-  alert(err.error.message);
-  });
   }
+
+
+
 
 
 
@@ -67,7 +51,6 @@ export class FormularioRegistroVehiculoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.listar()
 
   }
 
