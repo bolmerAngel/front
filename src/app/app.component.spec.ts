@@ -1,15 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { BarraComponent } from './componente/barra/barra.component';
+import { ParqueaderoComponent } from './componente/parqueadero/parqueadero.component';
+import { FormularioRegistroVehiculoComponent } from './componente/parqueadero/formulario-registro-vehiculo/formulario-registro-vehiculo.component';
+import { FormsModule } from '@angular/forms';
+import { ListaVehiculoComponent } from './componente/parqueadero/lista-vehiculo/lista-vehiculo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,FormsModule,HttpClientModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,BarraComponent,ParqueaderoComponent,FormularioRegistroVehiculoComponent,ListaVehiculoComponent
       ],
     }).compileComponents();
   }));
@@ -20,16 +26,5 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'parqueadero-fornt'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('parqueadero-fornt');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to parqueadero-fornt!');
-  });
+  
 });

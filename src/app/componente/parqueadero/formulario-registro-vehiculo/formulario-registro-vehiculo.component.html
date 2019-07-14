@@ -11,8 +11,8 @@
                 <select class="browser-default" id="tipo" name="tipovehiculo"
                     [(ngModel)]="formulariovehiculo.tipovehiculo">
                     <option value="" disabled selected>Selecione el tipo de vehiculo</option>
-                    <option value="CARRO">Carro</option>
-                    <option value="MOTO">Moto</option>
+                    <option  id=0 value="CARRO">Carro</option>
+                    <option id=1 value="MOTO">Moto</option>
                 </select>
             </div>
             <div *ngIf="formulariovehiculo.tipovehiculo === 'MOTO'">
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <br/>
-            <a class="waves-effect waves-light btn-small" (click)="registrar()">Enviar</a>
+            <a class="waves-effect waves-light btn-small"  id ="registro" name="Registrar" (click)="registrar()">Registrar</a>
         </div>
     </form>
 

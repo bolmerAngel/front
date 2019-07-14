@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ParqueaderoComponent } from './parqueadero.component';
+import { ListaVehiculoComponent } from './lista-vehiculo/lista-vehiculo.component';
+import { FormularioRegistroVehiculoComponent } from './formulario-registro-vehiculo/formulario-registro-vehiculo.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ParqueaderoComponent', () => {
   let component: ParqueaderoComponent;
@@ -8,8 +12,10 @@ describe('ParqueaderoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParqueaderoComponent ]
+      declarations: [ ParqueaderoComponent,ListaVehiculoComponent,FormularioRegistroVehiculoComponent ],
+      imports: [FormsModule,HttpClientModule]
     })
+
     .compileComponents();
   }));
 
