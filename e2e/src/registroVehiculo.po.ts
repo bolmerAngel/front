@@ -7,13 +7,18 @@ export class Registarvehiculo {
         this.until = ExpectedConditions;
     }
 
-    navigateTo(url = "Registrar"): Promise<void> {
+    navigateTo(url = "/"): Promise<void> {
         return browser.get(`${browser.baseUrl}${url}`) as Promise<void>
     }
 
     
     getTipoVehiculoSelect(): ElementFinder {
-        return $('#tipo');
+        return $('#tipovehiculo');
+    }
+
+    getVehiculoIngresado(placa:string): ElementFinder {
+       // return $( "input[name*='"+placa+"]" );
+       return $('#btnSalir' + placa);
     }
 
     getPlacaImput(): ElementFinder {
@@ -21,7 +26,7 @@ export class Registarvehiculo {
     }
 
     getBtnRegistrarButton(): ElementFinder {
-        return $('#registro');
+        return $('#Btnregistro');
     }
 
     getCilindrajeImput(): ElementFinder {
@@ -44,16 +49,20 @@ export class Registarvehiculo {
         return await this.getPlacaImput().sendKeys(text);
     }
 
-    async setTipoVehiculoSelect(optionI: number): Promise<void> {
-        // Marque para esperar hasta que aparezcan las opciones
+    async setTipoVehiculoSelect(optionI: string): Promise<void> {
+        // Tick to wait until options apear
         await browser.sleep(500);
-      
-        const opciones: ElementFinder[] = await this.getTipoVehiculoSelect().all(by.tagName('option'));
-        opciones[optionI].click();
+        // End tick
+        this.getTipoVehiculoSelect().all(by.css('option[value="' + optionI + '"]')).click();
+        await browser.sleep(800);
     }
 
     async setTextCilindraje(text: string): Promise<void> {
         return await this.getCilindrajeImput().sendKeys(text);
+    }
+    ///Verificar///
+    async verificarIngreso(text: string): Promise<void> {
+        return await this.getVehiculoIngresado(text);
     }
 
 
