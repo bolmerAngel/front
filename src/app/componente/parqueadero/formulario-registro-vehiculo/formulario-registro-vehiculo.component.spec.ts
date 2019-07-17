@@ -4,12 +4,13 @@ import { FormularioRegistroVehiculoComponent } from './formulario-registro-vehic
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaVehiculoComponent } from '../lista-vehiculo/lista-vehiculo.component';
+//import {ParqueaderoService} from ParqueaderoService
 
 
 describe('FormularioRegistroVehiculoComponent', () => {
   let component: FormularioRegistroVehiculoComponent;
   let fixture: ComponentFixture<FormularioRegistroVehiculoComponent>;
- 
+  //let placa: getPlacaImput;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -33,3 +34,17 @@ describe('FormularioRegistroVehiculoComponent', () => {
 
 
 });
+
+describe("placa", function() {
+  let component: FormularioRegistroVehiculoComponent;
+  it("se enencuentra el vehiculo en el parqueadero", function() {
+    expect(true).toBe(true);
+  });
+});
+
+
+
+
+
+
+

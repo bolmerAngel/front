@@ -25,7 +25,7 @@ describe('Registro de vehiculo', () => {
         await registarvehiculo.setTipoVehiculoSelect(tipoVehiculoCarro);
         await registarvehiculo.clickBtnRegistrarButton();
         
-        await browser.sleep(800);
+        await browser.sleep(3600);
        
         expect(registarvehiculo.verificarIngreso(placaCarro)).length>0;
    
@@ -39,10 +39,10 @@ describe('Registro de vehiculo', () => {
         await registarvehiculo.setTextPlaca(placaMoto);
         await registarvehiculo.clickTipoVehiculoSelect();
         await registarvehiculo.setTipoVehiculoSelect(tipoVehiculoMoto);
-        await registarvehiculo.setTextCilindraje('500');
+        await registarvehiculo.setTextCilindraje('600');
         await registarvehiculo.clickBtnRegistrarButton();
         
-        await browser.sleep(800);
+        await browser.sleep(3600);
        // const toastContent = await registarvehiculo.getMensajeQuemadoText();
 
         expect(registarvehiculo.verificarIngreso(placaMoto)).length>0;
@@ -63,6 +63,7 @@ describe('Registro de vehiculo', () => {
         expect(alertDialog.getText()).toEqual("Hello");
 
         //const toastContent = await registarvehiculo.getMensajeQuemadoText();
+
 
       
         expect(toastContent.trim()).toEqual("El vehiculo ya ha ingresado");
