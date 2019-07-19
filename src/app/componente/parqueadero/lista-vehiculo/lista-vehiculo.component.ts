@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParqueaderoService } from 'src/app/parqueadero.service';
+import { ParqueaderoService } from 'src/app/componente/parqueadero/shared/parqueadero.service';
 
 @Component({
   selector: 'app-lista-vehiculo',

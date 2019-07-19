@@ -49,7 +49,9 @@ describe('Registro de vehiculo', () => {
    
     })
 
-   /* it('Error registro de vehículo carro', async () => {
+
+
+  /* it('Error registro de vehículo carro', async () => {
 
         const expectedMessage = "Erro al ingresado del vehiculo .";
         
@@ -59,10 +61,10 @@ describe('Registro de vehiculo', () => {
         await registarvehiculo.clickBtnRegistrarButton();
 
    
-        var alertDialog = p.switchTo().alert();
-        expect(alertDialog.getText()).toEqual("Hello");
+        //var alertDialog = p.switchTo().alert();
+        //expect(alertDialog.getText()).toEqual("Hello");
 
-        //const toastContent = await registarvehiculo.getMensajeQuemadoText();
+        const toastContent = await registarvehiculo.getMensajeQuemadoText();
 
 
       
@@ -70,6 +72,5 @@ describe('Registro de vehiculo', () => {
 
     })*/
 
-
-})
+});
 

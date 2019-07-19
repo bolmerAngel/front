@@ -3,12 +3,12 @@
     <form action="" name="formulariovehiculo">
 
         <div>
-            <div class="input-field col s12">
-                <input type="text" id="placa" name="placa" [(ngModel)]="formulariovehiculo.placa">
+            <div class="input-field col s12" >
+                <input type="text" id="placa"   name="placa" [(ngModel)]="formulariovehiculo.placa">
                 <label for="placa">Placa</label>
             </div>
             <div>
-                <select class="browser-default" id="tipovehiculo" name="tipovehiculo"
+                <select class="browser-default"   id="tipovehiculo" name="tipovehiculo"
                     [(ngModel)]="formulariovehiculo.tipovehiculo">
                     <option value="" disabled selected>Selecione el tipo de vehiculo</option>
                     <option  id=0 value="CARRO">Carro</option>
@@ -17,12 +17,12 @@
             </div>
             <div *ngIf="formulariovehiculo.tipovehiculo === 'MOTO'">
                 <div class="input-field col s12">
-                    <input type="number" id="cilindraje" name="cilindraje" [(ngModel)]="formulariovehiculo.cilindraje">
+                    <input type="number" id="cilindraje"  name="cilindraje" [(ngModel)]="formulariovehiculo.cilindraje">
                     <label for="cilindraje">cilindraje</label>
                 </div>
             </div>
             <br/>
-            <a class="waves-effect waves-light btn-small"  id ="Btnregistro" name="Btnregistro" (click)="registrar()">Registrar</a>
+            <button class="waves-effect waves-light btn-small"  valid='Btnregistro'  id ="Btnregistro" name="Btnregistro" (click)="registrar()">Registrar</button>
         </div>
     </form>
 

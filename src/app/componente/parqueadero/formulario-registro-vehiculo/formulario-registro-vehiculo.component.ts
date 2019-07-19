@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ParqueaderoService } from 'src/app/parqueadero.service';
+import { ParqueaderoService } from 'src/app/componente/parqueadero/shared/parqueadero.service';
 import { ListaVehiculoComponent } from '../lista-vehiculo/lista-vehiculo.component';
 
 @Component({
@@ -27,11 +27,6 @@ export class FormularioRegistroVehiculoComponent implements OnInit {
 
 
   }
-
-
-
-
-
   public resetearFormulario() {
     this.formulariovehiculo = {
       tipovehiculo: '',
@@ -39,11 +34,6 @@ export class FormularioRegistroVehiculoComponent implements OnInit {
       cilindraje: 0
     };
   }
-
-
-
-
-
 
   constructor(
     private parqueaderoServicio: ParqueaderoService

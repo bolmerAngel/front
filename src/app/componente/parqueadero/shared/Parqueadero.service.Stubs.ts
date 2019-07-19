@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
-
+import { environment } from '../../../../environments/environment';
+import { Observable, of } from 'rxjs';
+import {ParqueaderoService} from './parqueadero.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ParqueaderoService {
+export class ParqueaderoServiceStubs {
 
   constructor(
     private http: HttpClient
 
   ) { }
 
-
   crear(data: any) {
-    return this.http.post(environment.URL, data);
+    return of(true);
 
   }
 
   listar() {
-    return this.http.get(environment.URL)
+    return of([])
   }
 
   salir(placa: string) {
-    return this.http.put(`${environment.URL}/${placa}`, null)
+    return of(true)
   }
 
 
