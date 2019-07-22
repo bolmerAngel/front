@@ -34,9 +34,8 @@ describe('ListaVehiculoComponent', () => {
   
  
  /*it('debe mostrar la salida',async(() => {
-
-  expect(component.salir).toBe(true);
-  }))  */
+ expect(component.salir).toBe(true);
+  }))*/  
 
 
     
